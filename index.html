@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto DAS</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">Projeto DAS</h1>
+      <div class="author-pictures">
+     
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="kanban-board">
+      <!-- To Do Column -->
+      <div class="kanban-column">
+        <div class="column-header todo">
+          <div class="header-left">
+            <h2 class="column-title">
+              <i class="fas fa-clipboard-list"></i>
+              A Fazer
+            </h2>
+            <span class="task-count" id="todo-count">0</span>
+          </div>
+          <!-- <button class="add-task-btn" onclick="openTaskModal('todo')">
+            <i class="fas fa-plus"></i>
+          </button> -->
+        </div>
+        <div class="kanban-body" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)"
+          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+        </div>
+      </div>
+
+      <!-- In Progress Column -->
+      <div class="kanban-column">
+        <div class="column-header progress">
+          <div class="header-left">
+            <h2 class="column-title">
+              <i class="fas fa-cog fa-spin"></i>
+              Em Progresso
+            </h2>
+            <span class="task-count" id="inprogress-count">0</span>
+          </div>
+          <!-- <button class="add-task-btn" onclick="openTaskModal('inprogress')">
+            <i class="fas fa-plus"></i>
+          </button> -->
+        </div>
+        <div class="kanban-body" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)"
+          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+        </div>
+      </div>
+
+      <!-- Completed Column -->
+      <div class="kanban-column">
+        <div class="column-header done">
+          <div class="header-left">
+            <h2 class="column-title">
+              <i class="fas fa-check-circle"></i>
+              Concluído
+            </h2>
+            <span class="task-count" id="completed-count">0</span>
+          </div>
+          <!-- <button class="add-task-btn" onclick="openTaskModal('completed')">
+            <i class="fas fa-plus"></i>
+          </button> -->
+        </div>
+        <div class="kanban-body" id="completed" ondrop="drop(event)" ondragover="allowDrop(event)"
+          ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
