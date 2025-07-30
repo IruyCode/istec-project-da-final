@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto DAS</title>
+  <title>Projeto DA</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,9 +12,13 @@
 <body>
   <header class="header">
     <div class="header-content">
-      <h1 class="logo">Projeto DAS</h1>
+      <h1 class="logo">Projeto DA</h1>
       <div class="author-pictures">
-     
+        <img src="https://avatars.githubusercontent.com/u/66977112?v=4" alt="Author 1" />
+        <img
+          src="https://avatars.githubusercontent.com/u/166443388?s=400&u=ce21c665dd0a019dd3eee8a0de12d3802deea94e&v=4"
+          alt="Author 2" />
+        <img src="https://avatars.githubusercontent.com/u/192536527?v=4" alt="Author 3" />
       </div>
     </div>
   </header>
@@ -31,9 +35,9 @@
             </h2>
             <span class="task-count" id="todo-count">0</span>
           </div>
-          <!-- <button class="add-task-btn" onclick="openTaskModal('todo')">
+          <button class="add-task-btn" onclick="openTaskModal('todo')">
             <i class="fas fa-plus"></i>
-          </button> -->
+          </button>
         </div>
         <div class="kanban-body" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)"
           ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
@@ -50,9 +54,9 @@
             </h2>
             <span class="task-count" id="inprogress-count">0</span>
           </div>
-          <!-- <button class="add-task-btn" onclick="openTaskModal('inprogress')">
+          <button class="add-task-btn" onclick="openTaskModal('inprogress')">
             <i class="fas fa-plus"></i>
-          </button> -->
+          </button>
         </div>
         <div class="kanban-body" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)"
           ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
@@ -69,9 +73,9 @@
             </h2>
             <span class="task-count" id="completed-count">0</span>
           </div>
-          <!-- <button class="add-task-btn" onclick="openTaskModal('completed')">
+          <button class="add-task-btn" onclick="openTaskModal('completed')">
             <i class="fas fa-plus"></i>
-          </button> -->
+          </button>
         </div>
         <div class="kanban-body" id="completed" ondrop="drop(event)" ondragover="allowDrop(event)"
           ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
@@ -79,6 +83,40 @@
       </div>
     </div>
   </main>
+
+
+  <!-- Task Modal -->
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Nova Tarefa</h3>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <form id="taskForm">
+        <div class="form-group">
+          <label class="form-label">Título *</label>
+          <input type="text" id="taskTitle" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descrição</label>
+          <textarea id="taskDescription" class="form-textarea" placeholder="Descreva a tarefa..."
+            maxlength="200"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Prioridade</label>
+          <select id="taskPriority" class="form-select">
+            <option value="low">Baixa</option>
+            <option value="medium" selected>Média</option>
+            <option value="high">Alta</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Criar Tarefa</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
